@@ -1,11 +1,13 @@
-let organizations = [
-  {
-    name: 'New York City',
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }
-];
+const Organization = require('../../models/OrganizationModel');
+
+
+const organizations = async (root, args, context, info) => {
+  let organizations = await Organization.find();
+
+  return organizations;
+};
+
 
 module.exports = {
-  organizations: () => organizations
+  organizations
 };

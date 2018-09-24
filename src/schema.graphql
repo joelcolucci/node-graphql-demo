@@ -3,6 +3,12 @@ type Query {
   organizations: [Organization]!
 }
 
+type Mutation {
+  createOrganization(name: String!): Organization!
+  deleteOrganization(id: ID!): Organization!
+  updateOrganization(id: ID!, name: String): Organization!
+}
+
 # Models
 type Event {
   name: String!
@@ -23,6 +29,7 @@ type Location {
 }
 
 type Organization {
+  id: ID!
   name: String!
   createdAt: String!
   updatedAt: String!
