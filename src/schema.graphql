@@ -1,0 +1,36 @@
+# Root Types
+type Query {
+  organizations: [Organization]!
+}
+
+# Models
+type Event {
+  name: String!
+  startDate: String!
+  startTime: String!
+  description: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Location {
+  name: String!
+  address: String!
+  latitude: Float!
+  longitude: Float!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Organization {
+  name: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+
+
+
+
+
+
