@@ -67,3 +67,4 @@ typings/
 .dbshell
 .vscode
 dist
+.yarn
