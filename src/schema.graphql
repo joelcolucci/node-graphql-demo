@@ -1,16 +1,31 @@
 # Root Types
 type Query {
   organizations: [Organization]!
+  events: [Event]!
 }
 
 type Mutation {
   createOrganization(name: String!): Organization!
   deleteOrganization(id: ID!): Organization!
   updateOrganization(id: ID!, name: String): Organization!
+
+  createEvent(
+    name: String!,
+    startDate: String!,
+    startTime: String!,
+    description: String!): Event!
+  deleteEvent(id: ID!): Event!
+  updateEvent(,
+    id: ID!
+    name: String,
+    startDate: String,
+    startTime: String,
+    description: String): Event!
 }
 
 # Models
 type Event {
+  id: ID!
   name: String!
   startDate: String!
   startTime: String!
