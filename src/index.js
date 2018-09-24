@@ -1,18 +1,10 @@
 const { GraphQLServer } = require('graphql-yoga');
 
-// In-memory datastore
-let organizations = [
-  {
-    name: 'New York City',
-    createdAt: new Date(),
-    updatedAt: new Date()
-  }
-];
+const Query = require('./resolvers/Query/index');
+
 
 const resolvers = {
-  Query: {
-    organizations: () => organizations
-  }
+  Query
 };
 
 const server = new GraphQLServer({
