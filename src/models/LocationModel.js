@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
 
-const EventModel = mongoose.Schema({
+const LocationModel = mongoose.Schema({
   name: {
     type: String
   },
-  startDate: {
+  address: {
     type: String
   },
-  startTime: {
-    type: String
+  latitude: {
+    type: Number
   },
-  description: {
-    type: String
+  longitude: {
+    type: Number
   },
   createdAt: {
     type: Date,
@@ -25,4 +25,4 @@ const EventModel = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Event', EventModel);
+module.exports = mongoose.model('Location', LocationModel);
