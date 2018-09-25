@@ -66,6 +66,8 @@ type Location {
 type Organization {
   id: ID!
   name: String!
+  events: [Event]
+  locations: [Location]
   createdAt: String!
   updatedAt: String!
 }

@@ -1,10 +1,26 @@
+const Event = require('../models/EventModel');
+const Location = require('../models/LocationModel');
 const Query = require('./Query/index');
 const Mutation = require('./Mutation/index');
 
 
 let resolvers = {
   Query,
-  Mutation
+  Mutation,
+  Organization: {
+    events: async (root, args, context, info) => {
+      let organizationID = root.id || args.id;
+      let eventsByOrganizationID = await Event.find({organizationID: organizationID});
+
+      return eventsByOrganizationID;
+    },
+    locations: async (root, args, context, info) => {
+      let organizationID = root.id || args.id;
+      let locationsByOrganizationID = await Location.find({organizationID: organizationID});
+
+      return locationsByOrganizationID;
+    }
+  }
 };
 
 
