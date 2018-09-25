@@ -20,7 +20,7 @@ const updateEvent = async (root, args, context, info) => {
 
   let updateDocument = {
     ...args,
-    updatedAt: Date.now()
+    updatedAt: new Date()
   };
 
   let updatedDocument = await Event.findOneAndUpdate(

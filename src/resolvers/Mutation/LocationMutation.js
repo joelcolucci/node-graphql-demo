@@ -2,15 +2,15 @@ const Location = require('../../models/LocationModel');
 
 
 const createLocation = async (root, args, context, info) => {
-  let newDocument = {
+  let location = {
     ...args,
     createdAt: new Date(),
     updatedAt: new Date()
   };
 
-  await Location.create(newDocument);
+  await Location.create(location);
 
-  return newDocument;
+  return location;
 };
 
 const updateLocation = async (root, args, context, info) => {
@@ -20,7 +20,7 @@ const updateLocation = async (root, args, context, info) => {
 
   let updateDocument = {
     ...args,
-    updatedAt: Date.now()
+    updatedAt: new Date()
   };
 
   let updatedDocument = await Location.findOneAndUpdate(

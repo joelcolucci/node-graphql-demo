@@ -3,7 +3,7 @@ const Organization = require('../../models/OrganizationModel');
 
 const createOrganization = async (root, args, context, info) => {
   let organization = {
-    name: args.name,
+    ...args,
     createdAt: new Date(),
     updatedAt: new Date()
   };
@@ -20,7 +20,7 @@ const updateOrganization = async (root, args, context, info) => {
 
   let updateDocument = {
     name: args.name,
-    updatedAt: Date.now()
+    updatedAt: new Date()
   };
 
   let updatedDocument = await Organization.findOneAndUpdate(
