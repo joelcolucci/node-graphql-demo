@@ -7,7 +7,18 @@ const locations = async (root, args, context, info) => {
   return locations;
 };
 
+const location = async (root, args, context, info) => {
+  let queryDocument = {
+    _id: args.id
+  };
+
+  let location = await Location.findOne(queryDocument);
+
+  return location;
+};
+
 
 module.exports = {
+  location,
   locations
 };

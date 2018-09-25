@@ -1,6 +1,8 @@
 # Root Types
 type Query {
+  event(id: ID!): Event!
   events: [Event]!
+  location(id: ID!): Location!
   locations: [Location]!
   organization(id: ID!): Organization!
   organizations: [Organization]!
