@@ -42,7 +42,7 @@ type Mutation {
 
 # Models
 type Event {
-  organizationID: ID!
+  organization: Organization!
   id: ID!
   name: String!
   startDate: String!
@@ -53,7 +53,7 @@ type Event {
 }
 
 type Location {
-  organizationID: ID!
+  organization: Organization!
   id: ID!
   name: String!
   address: String!
