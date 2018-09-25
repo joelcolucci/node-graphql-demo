@@ -7,7 +7,18 @@ const organizations = async (root, args, context, info) => {
   return organizations;
 };
 
+const organization = async (root, args, context, info) => {
+  let queryDocument = {
+    _id: args.id
+  };
+
+  let organization = await Organization.findOne(queryDocument);
+
+  return organization;
+};
+
 
 module.exports = {
+  organization,
   organizations
 };

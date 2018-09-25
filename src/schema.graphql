@@ -2,6 +2,7 @@
 type Query {
   events: [Event]!
   locations: [Location]!
+  organization(id: ID!): Organization!
   organizations: [Organization]!
 }
 
