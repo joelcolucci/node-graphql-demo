@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 
 const LocationModel = mongoose.Schema({
+  organizationID: {
+    type: String
+  },
   name: {
     type: String
   },

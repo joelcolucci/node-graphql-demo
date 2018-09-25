@@ -11,6 +11,7 @@ type Mutation {
   updateOrganization(id: ID!, name: String): Organization!
 
   createEvent(
+    organizationID: ID!
     name: String!,
     startDate: String!,
     startTime: String!,
@@ -24,6 +25,7 @@ type Mutation {
     description: String): Event!
 
   createLocation(
+    organizationID: ID!
     name: String!
     address: String!
     latitude: Float!
@@ -39,6 +41,7 @@ type Mutation {
 
 # Models
 type Event {
+  organizationID: ID!
   id: ID!
   name: String!
   startDate: String!
@@ -49,6 +52,7 @@ type Event {
 }
 
 type Location {
+  organizationID: ID!
   id: ID!
   name: String!
   address: String!

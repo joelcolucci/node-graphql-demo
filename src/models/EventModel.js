@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 
 const EventModel = mongoose.Schema({
+  organizationID: {
+    type: String
+  },
   name: {
     type: String
   },
